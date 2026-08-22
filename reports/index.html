@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse Hoofs V2 daily model analysis and runner metric companion reports.">
+  <title>Report Archive | Hoofs V2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/archive.css">
+  <link rel="stylesheet" href="../assets/css/history.css">
+  <script defer src="../assets/js/config.js"></script>
+  <script defer src="../assets/js/main.js"></script>
+</head>
+<body class="archive-page">
+  <header class="site-header is-scrolled">
+    <div class="container nav-wrap">
+      <a class="brand" href="../"><img src="../assets/images/hoofs-logo-gold.png" alt="" width="52" height="52"><span><strong>HOOFS</strong><small>Analysis V2</small></span></a>
+      <nav class="site-nav archive-nav"><a href="../">Home</a><a href="../how-to-use.html">How to use</a><a href="../results.html">Results</a><a href="#archive">Reports</a><a class="button button-small" href="#" data-telegram-link target="_blank" rel="noopener">Join Telegram ↗</a></nav>
+    </div>
+  </header>
+  <main id="archive">
+    <section class="archive-hero">
+      <div class="container">
+        <p class="eyebrow"><span></span> Hoofs report library</p>
+        <h1>Daily analysis,<br><em>filed by race day.</em></h1>
+        <p>Open the core model view for fast comparison or the companion for deeper runner-level context.</p>
+      </div>
+    </section>
+    <section class="archive-body">
+      <div class="container">
+        <!-- DAILY_ARCHIVE_START -->
+        <div class="archive-toolbar">
+          <div><span class="live-dot"></span><strong>Latest publication</strong><small>22 August 2026</small></div>
+          <label>Find a report <input type="search" placeholder="Search by date or meeting…" data-report-search></label>
+        </div>
+        <div class="archive-list" data-report-list>
+          <article class="archive-day" data-search="22 august 2026 chester curragh killarney lingfield newmarket newton abbot redcar york">
+            <div class="archive-date"><span>22</span><div><strong>August</strong><small>2026 · Saturday</small></div></div>
+            <div class="archive-meetings"><span>Chester</span><span>Curragh</span><span>Killarney</span><span>Lingfield</span><span>Newmarket</span><span>Newton Abbot</span><span>Redcar</span><span>York</span></div>
+            <div class="archive-actions"><a href="2026-08-22/analysis.html"><strong>V2 Model Analysis</strong><small>8 meetings · 57 races</small><i>→</i></a><a href="2026-08-22/companion.html"><strong>Metric Companion</strong><small>Runner-level context</small><i>→</i></a></div>
+          </article>
+        </div>
+        <p class="no-results" data-no-results hidden>No reports match that search.</p>
+        <!-- DAILY_ARCHIVE_END -->
+        <aside class="legacy-archive">
+          <div><span>Original public archive</span><h2>Looking for the V1 reports?</h2><p>Hoofs has published reports openly since early 2025—first through Telegram, then through the original GitHub Pages site. That historical archive remains available as a record of the project before V2.</p></div>
+          <a class="button button-dark" href="https://gcampb41.github.io/HoofsAnalysis/index.html" target="_blank" rel="noopener">Open the V1 archive <strong>↗</strong></a>
+        </aside>
+        <aside class="archive-note"><strong>V2 archive starting point</strong><p>This library contains the new V2 reporting format. New race days will be added here as they are published.</p></aside>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-bottom"><p>© <span data-year></span> Hoofs Analysis.</p><p>Information and analysis only. Please gamble responsibly. 18+</p></div></footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.querySelector('[data-report-search]');
+      const days = [...document.querySelectorAll('.archive-day')];
+      const empty = document.querySelector('[data-no-results]');
+      input?.addEventListener('input', () => {
+        const query = input.value.trim().toLowerCase();
+        let shown = 0;
+        days.forEach(day => { const match = day.dataset.search.includes(query); day.hidden = !match; shown += match ? 1 : 0; });
+        empty.hidden = shown > 0;
+      });
+    });
+  </script>
+</body>
+</html>
