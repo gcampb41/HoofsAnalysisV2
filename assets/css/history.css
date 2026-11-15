@@ -1,0 +1,91 @@
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+/* Use the compressed public hero; the large source PNG stays local only. */
+.hero-image {
+  background-image: url('../images/hoofs-hero-banner.jpg');
+}
+
+.project-history {
+  margin-top: 34px;
+  padding: 25px 28px;
+  background: #ede8dd;
+  border-left: 3px solid var(--gold);
+}
+
+.project-history > span {
+  display: block;
+  color: #8b6c2c;
+  font: 700 0.67rem "Manrope", sans-serif;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.project-history p {
+  margin: 10px 0 15px;
+  color: #626b65;
+  font-size: 0.84rem;
+}
+
+.project-history a {
+  display: inline-flex;
+  gap: 12px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #b9a16c;
+  color: #70571f;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.legacy-archive {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 50px;
+  margin-top: 55px;
+  padding: 35px;
+  background: #e5dfd1;
+  border: 1px solid #d1c8b7;
+}
+
+.legacy-archive span {
+  color: #896b2d;
+  font: 700 0.64rem "Manrope", sans-serif;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.legacy-archive h2 {
+  margin: 7px 0;
+  font: 700 1.5rem "Manrope", sans-serif;
+}
+
+.legacy-archive p {
+  max-width: 720px;
+  margin: 0;
+  color: #626b65;
+  font-size: 0.82rem;
+}
+
+.legacy-archive .button {
+  white-space: nowrap;
+}
+
+.legacy-archive .button-dark {
+  background: var(--deep);
+  color: white;
+}
+
+@media (max-width: 680px) {
+  .legacy-archive {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 26px;
+  }
+
+  .legacy-archive .button {
+    justify-self: start;
+  }
+}
